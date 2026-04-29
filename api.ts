@@ -1,4 +1,5 @@
-const API_URL = "http://192.168.10.4:8080/produtos";
+// Troque o IP abaixo pelo IP da sua máquina (comando 'ipconfig' ou 'ifconfig')
+const API_URL = "http://XXX.XXX.X.X:8080/produtos";
 
 interface Item {
     id?: number;
