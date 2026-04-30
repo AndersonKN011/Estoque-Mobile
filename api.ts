@@ -1,5 +1,5 @@
 // Troque o IP abaixo pelo IP da sua máquina (comando 'ipconfig' ou 'ifconfig')
-const API_URL = "http://XXX.XXX.X.X:8080/produtos";
+const API_URL = "http://192.168.10.3:8080/produtos";
 
 interface Item {
     id?: number;
@@ -58,6 +58,22 @@ export const deletarItens = async (ids: number[]) => {
         return true;
     } catch (error) {
         console.error("Falha na conexão DELETE:", error);
+        return null;
+    }
+};
+
+export const atualizarItem = async (item: Item) => {
+    try {
+        const response = await fetch(`${API_URL}/${item.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        });
+        return await response.json();
+    } catch (error) {
+        console.error("Falha na conexão PUT:", error);
         return null;
     }
 };

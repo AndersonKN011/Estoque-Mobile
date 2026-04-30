@@ -51,7 +51,7 @@ export default function Index() {
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={goListPage}>
         <Text style={styles.buttonText}>
-          Acessar Estoque
+          Ver Estoque
         </Text>
       </TouchableOpacity>
 
