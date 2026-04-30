@@ -1,5 +1,4 @@
-// Troque o IP abaixo pelo IP da sua máquina (comando 'ipconfig' ou 'ifconfig')
-const API_URL = "http://192.168.10.3:8080/produtos";
+export const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:8080/produtos";
 
 interface Item {
     id?: number;
